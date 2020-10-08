@@ -11,14 +11,14 @@ import javax.crypto.spec.SecretKeySpec;
 public class StoneScissorsPaper {
 	public static void main(String args[]) throws NoSuchAlgorithmException, InvalidKeyException{
 		
-		if(isArgumentsNotValid(args)) {
-			System.out.println("Error: arguments are not valid");
-			return; 
-		}
+	if(isArgumentsNotValid(args)) {
+		System.out.println("Error: arguments are not valid");
+		return; 
+	}
 		
-		SecureRandom random = new SecureRandom();
-		Integer compStep = random.nextInt(args.length) + 1;
-		byte[] values = new byte[32];
+	SecureRandom random = new SecureRandom();
+	Integer compStep = random.nextInt(args.length) + 1;
+	byte[] values = new byte[32];
         random.nextBytes(values);
         
         Mac mac = Mac.getInstance("HmacSHA256");
